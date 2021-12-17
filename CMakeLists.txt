@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(ACMP)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(lev main.cpp)
 add_executable(sls sls.cpp)
@@ -61,3 +61,5 @@ add_executable(286 286.cpp)
 add_executable(524 144.cpp)
 add_executable(Missing_Letters "Missing_Letters.cpp")
 add_executable(Julia_and_Flower_Beds "Julia_and_Flower_Beds .cpp")
+add_executable(80 80.cpp)
+add_executable(694 694.cpp)
