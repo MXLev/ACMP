@@ -1,3 +1,5 @@
+//https://acmp.ru/index.asp?main=task&id_task=941
+
 #include <iostream>
 #include <vector>
 
@@ -9,7 +11,7 @@ int main(){
    vector<vector<int>> arr(n);
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            cin >> arr[i, j]
+            cin >> arr[i][j];
         }
     }
 }

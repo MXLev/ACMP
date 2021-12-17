@@ -1,3 +1,5 @@
+//https://acmp.ru/index.asp?main=task&id_task=286
+
 #include <iostream>
 #include <cmath>
 #include <vector>
