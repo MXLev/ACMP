@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool isprime(n){
+bool isprime(int n){
     for i in range(2, int(sqrt(n))):
     if n % i == 0:
     return False
