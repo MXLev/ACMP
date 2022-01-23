@@ -15,6 +15,8 @@ int main(){
         arr.push_back(n % 2);
         n /= 2;
     }
+    arr.push_back(n % 2);
+    n /= 2;
     int answ = 0;
     for (int i : arr) {
         if (i == 1){
