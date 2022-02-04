@@ -19,7 +19,11 @@ int main() {
     //a + b + c - n близко не то
     //a + b
     if (t == 1){
-
+        if (arr[1] + arr[2] + arr[3] - arr[0] * 2 < 0){
+            cout << 0;
+        } else {
+            cout << arr[1] + arr[2] + arr[3] - arr[0] * 2;
+        }
     } else if (t == 2){
         sort(arr.begin(), arr.end());
         cout << arr[0];
