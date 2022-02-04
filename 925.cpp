@@ -16,12 +16,12 @@ int main() {
         cin >> arr[i];
     }
     //a + b - n для двух видов
-    //a + b + c - n близко но не то
-    //
-    sort(arr.begin(), arr.end());
+    //a + b + c - n близко не то
+    //a + b
     if (t == 1){
-        cout << ;
+
     } else if (t == 2){
+        sort(arr.begin(), arr.end());
         cout << arr[0];
     }
 }
