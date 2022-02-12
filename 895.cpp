@@ -19,67 +19,90 @@ int main() {
         if (arr[0][1] == arr[0][2]){
             if (arr[0][0] == 'X'){
                 cout << "Win";
+                return 0;
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[1][0] == arr[1][1]&& arr[1][0] != '.'){ // горизонталь 2
+    }
+    if (arr[1][0] == arr[1][1]&& arr[1][0] != '.'){ // горизонталь 2
         if (arr[1][1] == arr[1][2]){
-            if (arr[0][0] == 'X'){
+            if (arr[1][0] == 'X'){
                 cout << "Win";
+                return 0;
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[2][0] == arr[2][1] && arr[2][0] != '.'){ // горизонталь 3
+    }
+    if (arr[2][0] == arr[2][1] && arr[2][0] != '.'){ // горизонталь 3
         if (arr[2][1] == arr[2][2]){
-            if (arr[0][0] == 'X'){
+            if (arr[2][0] == 'X'){
                 cout << "Win";
+                return 0;
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[0][0] == arr[0][1]&& arr[0][0] != '.'){ // вертикаль 1
-        if (arr[0][1] == arr[0][2]){
+    }
+    if (arr[0][0] == arr[1][0]&& arr[0][0] != '.'){ // вертикаль 1
+        if (arr[1][0] == arr[2][0]){
             if (arr[0][0] == 'X'){
                 cout << "Win";
+                return 0;
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[1][0] == arr[1][1] && arr[1][0] != '.'){ // вертикаль 2
-        if (arr[1][1] == arr[1][2]){
-            if (arr[0][0] == 'X'){
+    }
+    if (arr[0][1] == arr[1][1] && arr[0][1] != '.'){ // вертикаль 2
+        if (arr[1][1] == arr[2][1]){
+            if (arr[0][1] == 'X'){
                 cout << "Win";
+                return 0;
+
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[2][0] == arr[2][1] && arr[2][0] != '.'){ // вертикаль 3
+    }
+    if (arr[0][2] == arr[1][2] && arr[0][2] != '.'){ // вертикаль 3
         if (arr[2][1] == arr[2][2]){
-            if (arr[0][0] == 'X'){
+            if (arr[0][2] == 'X'){
                 cout << "Win";
+                return 0;
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[0][0] == arr[1][1] && arr[0][0] != '.'){ // диагональ 1
+    }
+    if (arr[0][0] == arr[1][1] && arr[0][0] != '.'){ // диагональ 1
         if (arr[1][1] == arr[2][2]){
             if (arr[0][0] == 'X'){
                 cout << "Win";
+                return 0;
             } else {
                 cout << "Lose";
+                return 0;
             }
         }
-    } else if (arr[2][0] == arr[1][1] && arr[2][0] != '.'){ // диагональ 2
-        if (arr[1][1] == arr[0][2]){
-            if (arr[0][0] == 'X'){
-                cout << "Win";
-            } else {
-                cout << "Lose";
-            }
-        }
-    } else {
-        cout << "Draw";
     }
+    if (arr[2][0] == arr[1][1] && arr[2][0] != '.'){ // диагональ 2
+        if (arr[1][1] == arr[0][2]){
+            if (arr[2][0] == 'X'){
+                cout << "Win";
+                return 0;
+            } else {
+                cout << "Lose";
+                return 0;
+            }
+        }
+    }
+    cout << "Draw";
 }
