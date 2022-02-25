@@ -19,9 +19,6 @@ int main(){
     pair<int, int> p3_pos;
     p3_pos.first = p3[0] - 'A';
     p3_pos.second = p3[1] - 49;
-    // ладья - 14 клеток
-    // ферзь - <14
-    // конь - max 8 клеток
     vector<vector<int>> arr(8, vector<int> (8, 1));
     // ладья
     for (int i = 0; i < 8; ++i) {
@@ -32,19 +29,76 @@ int main(){
     }
 
     // ферзь
+    //вертикаль
     for (int i = 0; i < 8; ++i) {
         arr[p1_pos.second][i] = 0;
     }
     for (int i = 0; i < 8; ++i) {
         arr[i][p1_pos.first] = 0;
     }
-    for (int i = p1_pos.second, j = p1_pos.first; i < 8 && j < 8; i++, j++) {
+    //диагональ
+    for (int i = p1_pos.second, j = p1_pos.first; i < 8 && j < 8; i++, j++) { // ЛЕВО ВЕРХ
             arr[i][j] = 0;
+    }
+    for (int i = p1_pos.second, j = p1_pos.first; i >= 0 && j >= 0; i--, j--) { // право низ
+        arr[i][j] = 0;
+    }
+    for (int i = p1_pos.second, j = p1_pos.first; i < 8 && j >= 0; i++, j--) { // право верх
+        arr[i][j] = 0;
+    }
+    for (int i = p1_pos.second, j = p1_pos.first; i >= 0 && j < 8; i--, j++) { // лево низ
+        arr[i][j] = 0;
+    }
+    // конь
+    if (p3_pos.first > 1){
+        if (p3_pos.second < 7){
+            arr[p3_pos.second + 1][p3_pos.first - 2] = 0;
         }
+        if (p3_pos.second > 0){
+            arr[p3_pos.second - 1][p3_pos.first - 2] = 0;
+        }
+    }
+    if (p3_pos.first > 0){
+        if (p3_pos.second < 6){
+            arr[p3_pos.second + 2][p3_pos.first - 1] = 0;
+        }
+        if (p3_pos.second > 1){
+            arr[p3_pos.second - 2][p3_pos.first - 1] = 0;
+        }
+    }
+    if (p3_pos.first < 6){
+        if (p3_pos.second < 7){
+            arr[p3_pos.second + 1][p3_pos.first + 2] = 0;
+        }
+        if (p3_pos.second > 0){
+            arr[p3_pos.second - 1][p3_pos.first + 2] = 0;
+        }
+    }
+    if (p3_pos.first < 7){
+        if (p3_pos.second < 6){
+            arr[p3_pos.second + 2][p3_pos.first + 1] = 0;
+        }
+        if (p3_pos.second > 1){
+            arr[p3_pos.second - 2][p3_pos.first + 1] = 0;
+        }
+    }
+    arr[p1_pos.second][p1_pos.first] = 2;
+    arr[p2_pos.second][p2_pos.first] = 3;
+    arr[p3_pos.second][p3_pos.first] = 4;
+
+//    for (int i = 7; i >= 0; --i) {
+//        for (int j = 0; j < 8; ++j) {
+//            cout << arr[i][j] << ' ';
+//        }
+//        cout << '\n';
+//    }
+    int answ = 0;
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
-            cout << arr[i][j] << ' ';
+            if (arr[i][j] == 0){
+                answ++;
+            }
         }
-        cout << '\n';
     }
+    cout << answ;
 }
