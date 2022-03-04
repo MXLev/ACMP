@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,5 +17,27 @@ int main(){
             cin >> arr[i][j];
         }
     }
-    int max, min =
+    vector<int> min;
+    for (int i = 0; i < n; ++i) {
+        int min1 = 1001;
+        for (int j = 0; j < m; ++j) {
+            if (min1 > arr[i][j]){
+                min1 = arr[i][j];
+            }
+        }
+        min.push_back(min1);
+    }
+    vector<int> max;
+    for (int j = 0; j < m; ++j) {
+        int max1 = 0;
+        for (int i = 0; i < n; ++i) {
+            if (arr[i][j] > max1){
+                max1 = arr[i][j];
+            }
+        }
+        max.push_back(max1);
+    }
+    sort(max.begin(), max.end());
+    sort(min.rbegin(), min.rend());
+    cout << min[0] << ' ' << max[0];
 }
