@@ -24,31 +24,43 @@ int main(){
         cin >> arr2[i];
     }
     for (int i = 0; i < k; ++i) {
-        int left = 0, right = n - 1;
-        while (left != right){
-            if (arr2[i] > arr[(right - left) / 2]){
-                if ((right - left) / 2 == 0){
-                    left = (right - left) / 2 + 1;
-                } else {
-                left = (right - left) / 2;
-                }
-            } else if (arr2[i] < arr[(right - left)]) {
-                if ((right - left) / 2 == 0){
-                    right = (right - left) / 2 + 1;
-                } else {
-                    right = (right - left) / 2;
-                }
+        int left = -1, right = n;
+        while (right - left != 1){
+            if (arr2[i] <= arr[(right + left) / 2]){
+                right = (right + left) / 2;
             } else {
-                if ((right - left) / 2 == 0){
-                    right = (right - left) / 2 + 1;
-                } else {
-                    right = (right - left) / 2;
-                }
-                break;
+                left = (right + left) / 2;
             }
+        }
+        ll answ = 0;
+        if (right < n){
+            answ = arr[right];
+        } else {
+            answ = 4000000000;
+        }
+        left = -1, right = n;
+        while (right - left != 1){
+            if (arr2[i] >= arr[(right + left) / 2]){
+                left = (right + left) / 2;
+            } else {
+                right = (right + left) / 2;
+            }
+        }
+        ll answ2 = 0;
+        if (left >= 0){
+            answ2 = arr[left];
+        } else {
+            answ2 = 4000000000;
+        }
+        cout << answ << ' ' << answ2 << ' ';
+        if (arr[i] - answ == arr[i] - answ2){
+            cout << min(answ, answ2) << '\n';
+        } else if (arr[i] - answ > arr[i] - answ2) {
+            cout << answ2 << '\n';
+        } else if (arr[i] - answ < arr[i] - answ2){
+            cout << answ << '\n';
         }
 //        double x;
 //        cout << fixed << setprecision(10) << x;
-        cout << arr[right] << '\n';
     }
 }
