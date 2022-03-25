@@ -52,12 +52,12 @@ int main(){
         } else {
             answ2 = 4000000000;
         }
-        cout << answ << ' ' << answ2 << ' ';
-        if (arr[i] - answ == arr[i] - answ2){
+        //cout << answ << ' ' << answ2 << ' ';
+        if (abs(arr2[i] - answ) == abs(arr2[i] - answ2)){
             cout << min(answ, answ2) << '\n';
-        } else if (arr[i] - answ > arr[i] - answ2) {
+        } else if (abs(arr2[i] - answ) > abs(arr2[i] - answ2)) {
             cout << answ2 << '\n';
-        } else if (arr[i] - answ < arr[i] - answ2){
+        } else if (abs(arr2[i] - answ) < abs(arr2[i] - answ2)){
             cout << answ << '\n';
         }
 //        double x;
