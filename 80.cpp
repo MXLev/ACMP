@@ -8,7 +8,7 @@ using namespace std;
 int main() {
     string input;
     cin >> input;
-    if (!isdigit(input[0]) || input[0] != '-'){
+    if (!isdigit(input[0]) && input[0] != '-'){
         cout << "ERROR";
         return 0;
     }

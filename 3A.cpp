@@ -11,5 +11,7 @@ int main() {
     cin >> w >> h >> n;
     int left = 0, right = max(w * n, h * n) - 1;
     //n <= l / h * l / w
-    while (left)
+    while (right - left > 1){
+
+    }
 }
