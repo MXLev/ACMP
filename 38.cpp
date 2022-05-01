@@ -8,10 +8,11 @@
 #include <iostream>
 #include <vector>
 
-vector<int> a; //исх
-vector<vector<pair<int, int>>> dp;
-
 using namespace std;
+
+vector<int> a; //исх
+
+vector<vector<pair<int, int>>> dp;
 
 void find(int l, int r, bool f) {
     if (dp[l][r] > 0) return;
