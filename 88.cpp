@@ -12,7 +12,7 @@ int main(){
     int n;
     cin >> n;
     int length = n * n;
-    vector<vector<int>> arr(n * n, vector<int> (n * n));
+   vector<vector<int>> arr(n * n, vector<int> (n * n));
     for (int i = 0; i < length; ++i) {
         for (int j = 0; j < length; ++j) {
             cin >> arr[i][j];
