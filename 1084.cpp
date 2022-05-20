@@ -49,5 +49,4 @@ int main(){
             cout << sum_per_line(l - 1, r - 1) << '\n';
         }
     }
-
 }
