@@ -18,8 +18,8 @@ void update(int index, ll add, int n) {
 }
 
 ll prefix_sum(int r) {
-    int result = 0;
-    for (; r >= 0; r = r & (r + 1) - 1) result += s[r];
+    ll result = 0;
+    for (; r >= 0; r = (r & (r + 1)) - 1) result += s[r];
     return result;
 }
 
