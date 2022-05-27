@@ -1,40 +1,32 @@
 //
 // Created by Beast on 24.05.2022.
-//
+// https://acmp.ru/index.asp?main=task&id_task=82
 
-#include <iostream>
+
 #include <vector>
 #include <algorithm>
-#include <set>
+#include <cstdio>
 
 using namespace std;
 
-int main(){
+int main() {
     int n, m;
-    cin >> n >> m;
-    vector<int> first(n);
-    set<int> firstCopy;
-    set<int> secondCopy;
+    scanf("%d %d", &n, &m);
+    vector<int> arr((int)10e5, 0);
     for (int i = 0; i < n; ++i) {
-        cin >> first[i];
-        firstCopy.insert(first[i]);
+        int t;
+        scanf("%d", &t);
+        ++arr[t];
     }
-    vector<int> second(m);
+    vector<int> arr2((int)10e5, 0);
     for (int i = 0; i < m; ++i) {
-        cin >> second[i];
-        secondCopy.insert(second[i]);
+        int t;
+        scanf("%d", &t);
+        ++arr2[t];
     }
-    if (n < m){
-        for (int i = 0; i < n; ++i) {
-            if (secondCopy.find(first[i]) != secondCopy.end()){
-                cout << first[i] << '\n';
-            }
-        }
-    } else {
-        for (int i = 0; i < n; ++i) {
-            if (firstCopy.find(second[i]) != firstCopy.end()){
-                cout << second[i] << '\n';
-            }
+    for (int i = 0; i < (int)10e5; ++i) {
+        if (arr[i] != 0 && arr2[i] != 0){
+            printf("%d ", i);
         }
     }
 }
