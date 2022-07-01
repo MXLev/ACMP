@@ -9,15 +9,27 @@ using namespace std;
 
 
 int main() {
-    string text;
-    while (getline(cin, text)) {
-        string word;
-        for (int i = 0; isalpha(text[i]); ++i) {
-            word += text[i];
+    string str;
+    while (getline(cin, str)) {
+        int i = 0;
+        for (int q = 0; q < str.size(); ++q) {
+            string word;
+            for (; isalpha(str[i]); ++i) {
+                word += str[i];
+            }
 
-        }
-        for (int i = word.size(); i > 0 ; --i) {
+            for (int j = word.size() - 1; j >= 0; --j) {
+                cout << word[j];
+            }
+//            cout <<  '/' <<  word << '/';
+            while (!isalpha(str[i])) {
+                cout << str[i];
+                i++;
+            }
 
+            word = "";
+            i++;
         }
+        str = "";
     }
 }
