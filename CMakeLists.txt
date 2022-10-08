@@ -108,4 +108,5 @@ add_executable(1018 1018.cpp)
 add_executable(1567 1567.cpp)
 add_executable(1905A 1905A.cpp)
 add_executable(1068 1068.cpp)
+add_executable(4H 4H.cpp)
 
