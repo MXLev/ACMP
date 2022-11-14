@@ -10,7 +10,7 @@ typedef long long ll;
 vector<int> l;
 vector<vector<int>> arr;
 
-void dfc(int i){
+void dfc(ll i){
     for (auto e: arr[i]) {
         if (l[e] != -1){ continue;}
         l[e] = l[i] + 1;
@@ -22,7 +22,7 @@ int main(){
     int n;
     cin >> n;
     arr.resize(n);
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n - 1; ++i) {
         int a = 0, b = 0;
         cin >> a >> b;
         arr[--a].push_back(--b);
@@ -30,7 +30,17 @@ int main(){
     }
 
     l.assign(n, -1);
+    l[0] = 0;
+    dfc(0);
+    ll max = 0, index = 0;
     for (int i = 0; i < n; ++i) {
-        dfc(0);
+        if (l[i] > max){
+            max = l[i];
+            index = i;
+        }
     }
+    l.assign(n, -1);
+    l[index] = 0;
+    dfc(index);
+    cout << *max_element(l.begin(), l.end());
 }

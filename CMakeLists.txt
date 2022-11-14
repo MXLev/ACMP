@@ -112,4 +112,4 @@ add_executable(4H 4H.cpp)
 add_executable(2056 2056.cpp)
 add_executable(114108 114108.cpp)
 add_executable(1025 1025.cpp)
-
+add_executable(1106 1106.cpp)
