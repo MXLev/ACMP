@@ -14,22 +14,21 @@ int main() {
         int i = 0;
         for (int q = 0; q < str.size(); ++q) {
             string word;
-            for (; isalpha(str[i]); ++i) {
+            for (;i <str.size() && isalpha(str[i]); ++i) {
                 word += str[i];
             }
 
             for (int j = word.size() - 1; j >= 0; --j) {
                 cout << word[j];
             }
-//            cout <<  '/' <<  word << '/';
-            while (!isalpha(str[i])) {
+            while (i <str.size() &&!isalpha(str[i])) {
                 cout << str[i];
                 i++;
             }
 
             word = "";
-            i++;
         }
         str = "";
+        cout << '\n';
     }
 }
